@@ -1,10 +1,11 @@
 import { expect, test } from "@playwright/test";
+import dotenv from "dotenv";
+dotenv.config();
 import LoginPage from "../pages/LoginPage";
 import SearchPage from "../pages/SearchPage";
 import ProfilePage from "../pages/ProfilePage";
 import MessagePage from "./../pages/MessagePage";
-import * as dotenv from "dotenv";
-dotenv.config();
+
 test("Login to the instagram", async ({ page }) => {
   const login = new LoginPage(page);
   const searchPage = new SearchPage(page);
