@@ -13,14 +13,6 @@ export default class SearchPage {
     await this.page.locator(this.serachIcon).click();
     await this.page.locator(this.searchField).fill(accountName);
     const listItems = this.page.locator(this.suggesteddAccounts);
-    // const allSuggestion = await listItems.all();
-    // for (let i = 0; i < allSuggestion.length; i++) {
-    //   let itemText = await allSuggestion[i].textContent();
-    //   console.log(itemText);
-    //   if (itemText && itemText.trim() === accountName) {
     await listItems.click();
-    //   break;
-    // }
-    // }
   }
 }

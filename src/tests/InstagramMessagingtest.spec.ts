@@ -5,6 +5,7 @@ import LoginPage from "../pages/LoginPage";
 import SearchPage from "../pages/SearchPage";
 import ProfilePage from "../pages/ProfilePage";
 import MessagePage from "./../pages/MessagePage";
+import { encryptEnvFile } from "../Utils/EncryptEnvFile";
 
 test("Login to the instagram", async ({ page }) => {
   const login = new LoginPage(page);
@@ -19,4 +20,8 @@ test("Login to the instagram", async ({ page }) => {
   await searchPage.searchForAccount("manjunathsh2020");
   await profilePage.openMessage();
   await messagePage.sendMessage("Hello");
+});
+
+test.skip("Encription", async ({ page }) => {
+  encryptEnvFile();
 });
