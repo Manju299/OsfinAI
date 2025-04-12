@@ -10,6 +10,6 @@ export default class MessagePage {
     await this.page.locator(this.messageInputField).fill(message);
     const sendbtn = this.page.locator(this.sendbutton);
     await expect(sendbtn).toBeVisible();
-    await sendbtn.click();
+    await sendbtn.click({ timeout: 4000 });
   }
 }
